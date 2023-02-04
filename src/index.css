@@ -13,3 +13,18 @@ body,
 	font-family: 'DM Sans', sans-serif;
 	@apply text-gray-500;
 }
+
+::-webkit-scrollbar {
+	height: 10px;
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+	background: gray;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+	background: gray;
+	border-radius: 10px;
+}
