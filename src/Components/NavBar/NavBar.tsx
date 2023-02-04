@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import Logo from '@/assets/Logo.png';
-import Link from './Link';
+import { Link } from './Link';
 import { SelectedPage } from '@/shared/types';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import ActionButton from '@/shared/ActionButton';
@@ -12,11 +12,11 @@ type Props = {
 	setSelectedPage: (value: SelectedPage) => void;
 }
 
-const NavBar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
+export const NavBar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 	const flexBetween = 'flex items-center justify-between';
 	const [isMenuToggle, setIsMenuToggle] = useState<boolean>(false);
 	const isAboveMediaScreens = useMediaQuery('(min-width: 1060px)');
-	const navBarBGcolor= isTopOfPage ? '': 'bg-primary-100 drop-shadow';
+	const navBarBGcolor = isTopOfPage ? '' : 'bg-primary-100 drop-shadow';
 
 	return (
 		<nav>
@@ -111,5 +111,3 @@ const NavBar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 		</nav>
 	)
 }
-
-export default NavBar
