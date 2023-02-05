@@ -9,24 +9,26 @@ type Props = {
 }
 
 export const ContactUs = ({ setSelectedPage }: Props) => {
-	const inputStyle = `mb-5 w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white`;
+	const inputStyle = `mb-5 w-full rounded-lg bg-primary-300 
+		px-5 py-3 placeholder-white`;
+
 	const {
 		register,
 		trigger,
-		formState: { errors }
+		formState: { errors },
 	} = useForm();
+
 	const handleSubmit = async (e: any) => {
 		const isValid = await trigger();
 		if (!isValid) {
 			e.preventDefault();
-
 		}
 	};
 
 	return (
 		<section
 			id='contactus'
-			className='mx-auto w-5/6 pt-24'
+			className='mx-auto w-5/6 pt-24 pb-32'
 		>
 			<motion.div onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}>
 				{/* Header */}
@@ -142,7 +144,7 @@ export const ContactUs = ({ setSelectedPage }: Props) => {
 							visible: { opacity: 1, y: 0 },
 						}}
 					>
-						<div className='md:before:content-evolvetext w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1]'>
+						<div className='w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext'>
 							<img
 								className='w-full'
 								alt='contact-us-graphic'
